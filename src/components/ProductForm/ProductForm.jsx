@@ -1,18 +1,15 @@
 import { useState } from "react";
 import { ProductList } from "../ProductList/ProductList";
+import { useProducts } from "../../hook/useProducts";
 
 export const ProductForm = () => {
   const [inputValue, setInputValue] = useState("");
+  const { products, addProduct, sumPrices } = useProducts();
   const [precio, setPrecio] = useState(0);
-  const [products, setProducts] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.trim().length <= 1 || precio <= 0) return;
-
-    const nuevoProducto = { nombre: inputValue, precio: precio };
-    setProducts([...products, nuevoProducto]); // Agrego el nuevo producto al array de productos
-
+    addProduct(inputValue, precio);
     setInputValue("");
     setPrecio(0);
   };

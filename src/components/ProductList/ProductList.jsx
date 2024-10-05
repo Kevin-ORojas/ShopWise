@@ -4,10 +4,10 @@ import EditIcon from "@mui/icons-material/Edit";
 export const ProductList = ({ products }) => {
   return (
     <div className="">
-      {products.map(({ nombre, precio }) => (
+      {products.map(({ id, nombre, precio }) => (
         <div
           className="sm:flex sm:w-full border p-4 flex justify-around items-center bg-gray-100"
-          key={products.id}
+          key={id}
         >
           <h2>{nombre}</h2>
           <p>${precio}</p>

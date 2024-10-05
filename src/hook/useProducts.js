@@ -1,0 +1,31 @@
+import React, { useState } from "react";
+
+export const useProducts = () => {
+  const [products, setProducts] = useState([]);
+
+  const addProduct = (nombre, precio) => {
+    const existe = products.find(
+      (product) =>
+        product.nombre.toLowerCase() === nombre.toLowerCase() &&
+        product.precio === precio
+    );
+    if (!existe) {
+      const nuevoProduct = {
+        id: Date.now(),
+        nombre,
+        precio,
+      };
+      setProducts([...products, nuevoProduct]);
+    }
+  };
+
+  const sumPrices = () => {
+    return products.reduce((total, product) => total + product.precio, 0);
+  };
+
+  return {
+    products,
+    addProduct,
+    sumPrices,
+  };
+};
