@@ -1,15 +1,21 @@
 import FactCheckIcon from "@mui/icons-material/FactCheck";
+import ClearIcon from "@mui/icons-material/Clear";
+import EditIcon from "@mui/icons-material/Edit";
 export const ProductList = ({ products }) => {
   return (
-    <div className="xl:flex xl:gap-36">
+    <div className="">
       {products.map(({ nombre, precio }) => (
         <div
-          className="sm:flex sm:w-full border p-4 flex justify-around items-center bg-gray-100 "
+          className="sm:flex sm:w-full border p-4 flex justify-around items-center bg-gray-100"
           key={products.id}
         >
           <h2>{nombre}</h2>
           <p>${precio}</p>
-          <FactCheckIcon sx={{ color: "blue", fontSize: "40px" }} />
+          <div className="ml-8 gap-4">
+            <FactCheckIcon className="blue text-sm" />
+            <ClearIcon className="red text-sm" />
+            <EditIcon className="green text-sm" />
+          </div>
         </div>
       ))}
     </div>
