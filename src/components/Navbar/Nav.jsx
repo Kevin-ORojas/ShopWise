@@ -8,13 +8,10 @@ export const Nav = () => {
           <a href="#">Home</a>
         </li>
         <li className="ml-4">
-          <a href="#">About</a>
+          <a href="#">Productos</a>
         </li>
         <li className="ml-4">
-          <a href="#">Products</a>
-        </li>
-        <li className="ml-4">
-          <a href="#">Contact</a>
+          <a href="#">Historial Compras</a>
         </li>
       </ul>
     </nav>
