@@ -3,8 +3,9 @@ import { ProductList } from "../ProductList/ProductList";
 import { useProducts } from "../../hook/useProducts";
 
 export const ProductForm = () => {
+  // Aquí es donde se almacenan y gestionan los productos
   const [inputValue, setInputValue] = useState("");
-  const { products, addProduct, sumPrices } = useProducts();
+  const { products, addProduct, sumPrices, removeProduct } = useProducts();
   const [precio, setPrecio] = useState(0);
 
   const handleSubmit = (e) => {
@@ -22,11 +23,8 @@ export const ProductForm = () => {
     setPrecio(Number(target.value));
   };
 
-  const handleSumaPrice = () => {
-    return products.reduce((acc, curr) => acc + curr.precio, 0);
-  };
   return (
-    <div className="mt-4">
+    <div className="mt-4 font-roboto">
       <form
         className="flex justify-around border h-12 bg-slate-200 rounded-md "
         onSubmit={handleSubmit}
@@ -54,9 +52,9 @@ export const ProductForm = () => {
         </button>
       </form>
 
-      <ProductList products={products} />
+      <ProductList products={products} removeProduct={removeProduct} />
       <h2 className="text-2xl font-bold text-slate-900">
-        Total: ${handleSumaPrice()}
+        Total: ${sumPrices()}
       </h2>
     </div>
   );

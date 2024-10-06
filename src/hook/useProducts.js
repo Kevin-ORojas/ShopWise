@@ -23,9 +23,15 @@ export const useProducts = () => {
     return products.reduce((total, product) => total + product.precio, 0);
   };
 
+  const removeProduct = (id) => {
+    const newProducts = products.filter((product) => product.id !== id);
+    setProducts(newProducts);
+  };
+
   return {
     products,
     addProduct,
     sumPrices,
+    removeProduct,
   };
 };
