@@ -24,11 +24,8 @@ export const ProductForm = () => {
   };
 
   return (
-    <div className="mt-4 font-roboto">
-      <form
-        className="flex justify-around border h-12 bg-slate-200 rounded-md "
-        onSubmit={handleSubmit}
-      >
+    <div className="max-w-full mx-auto mt-8 p-6 rounded-lg shadow-lg">
+      <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
         <input
           className="border p-2 ml-4 rounded-md hover:border-cyan-700 ease-linear transition-colors cursor-pointer"
           onChange={handleInputChange}
@@ -51,11 +48,12 @@ export const ProductForm = () => {
           Agregar Producto
         </button>
       </form>
-
-      <ProductList products={products} removeProduct={removeProduct} />
-      <h2 className="text-2xl font-bold font-roboto text-slate-900">
-        Total: ${sumPrices()}
-      </h2>
+      <div className="mt-8">
+        <ProductList products={products} removeProduct={removeProduct} />
+        <h2 className="text-2xl font-bold font-roboto text-slate-900 py-4">
+          Total: ${sumPrices()}
+        </h2>
+      </div>
     </div>
   );
 };
