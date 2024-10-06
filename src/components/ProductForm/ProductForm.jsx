@@ -45,7 +45,7 @@ export const ProductForm = () => {
           value={precio}
         />
         <button
-          className="border bg-sky-500 px-2 rounded-md hover:bg-sky-300 transition-colors duration-300 cursor-pointer text-sm"
+          className="border font-roboto font-semibold bg-sky-500 px-2 rounded-md hover:bg-sky-300 transition-colors duration-300 cursor-pointer text-sm"
           type="submit"
         >
           Agregar Producto
@@ -53,7 +53,7 @@ export const ProductForm = () => {
       </form>
 
       <ProductList products={products} removeProduct={removeProduct} />
-      <h2 className="text-2xl font-bold text-slate-900">
+      <h2 className="text-2xl font-bold font-roboto text-slate-900">
         Total: ${sumPrices()}
       </h2>
     </div>
