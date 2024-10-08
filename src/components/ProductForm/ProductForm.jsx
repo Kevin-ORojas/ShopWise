@@ -42,7 +42,7 @@ export const ProductForm = () => {
           value={precio}
         />
         <button
-          className="border font-roboto font-semibold bg-sky-500 px-2 rounded-md hover:bg-sky-300 transition-colors duration-300 cursor-pointer text-sm"
+          className="border font-roboto font-semibold bg-sky-500 px-2 p-4 rounded-md hover:bg-sky-300 transition-colors duration-300 cursor-pointer text-sm"
           type="submit"
         >
           Agregar Producto
