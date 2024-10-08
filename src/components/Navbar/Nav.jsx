@@ -1,19 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Nav = () => {
   return (
     <nav className="w-full py-4 bg-slate-500">
-      <ul className="flex justify-end px-4">
-        <li className="ml-4">
-          <a href="#">Home</a>
-        </li>
-        <li className="ml-4">
-          <a href="#">Productos</a>
-        </li>
-        <li className="ml-4">
-          <a href="#">Historial Compras</a>
-        </li>
-      </ul>
+      <Link to={"/"}>Home</Link>
+      <Link to={"/products"}>agregar productos</Link>
+      <Link to={"/login"}>Login</Link>
+
+      <Link to={"/register"}>register</Link>
     </nav>
   );
 };

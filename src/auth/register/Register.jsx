@@ -2,8 +2,21 @@ import React from "react";
 
 export const Register = () => {
   return (
-    <div>
-      <h2>reguster</h2>
-    </div>
+    <form>
+      <div>
+        <label htmlFor="username">Usuario</label>
+        <input type="text" placeholder="username" name="username" />
+      </div>
+
+      <div>
+        <label htmlFor="email">Email</label>
+        <input type="text" placeholder="email" name="email" />
+      </div>
+
+      <div>
+        <label htmlFor="contraseña">Usuario</label>
+        <input type="text" placeholder="contraseña" name="password" />
+      </div>
+    </form>
   );
 };
