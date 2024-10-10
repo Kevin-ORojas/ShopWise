@@ -2,10 +2,12 @@ import FactCheckIcon from "@mui/icons-material/FactCheck";
 import ClearIcon from "@mui/icons-material/Clear";
 import EditIcon from "@mui/icons-material/Edit";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import { calculateTotal } from "../../helpers/calculateTotal";
+
+import { useProducts } from "../../hook/useProducts";
+import { useCalculateTotal } from "../../hook/useCalculateTotal";
 
 export const ProductList = ({ products, removeProduct }) => {
-  const { count, increment } = calculateTotal();
+  const { total, incrementQuantity } = useCalculateTotal();
 
   return (
     <div className="font-roboto">
@@ -20,13 +22,9 @@ export const ProductList = ({ products, removeProduct }) => {
             key={id}
           >
             <h2>
-              {nombre}{" "}
-              <AddCircleOutlineIcon
-                className="cursor-pointer"
-                onClick={increment}
-              />
+              {nombre} <AddCircleOutlineIcon className="cursor-pointer" />
             </h2>
-            <p>cantidad: {count}</p>
+            <p>cantidad: </p>
             <p>${precio}</p>
             <div className="ml-8 gap-4">
               <FactCheckIcon className="blue text-sm" />

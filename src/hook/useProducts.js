@@ -4,6 +4,10 @@ export const useProducts = () => {
   const [products, setProducts] = useState([]);
 
   const addProduct = (nombre, precio) => {
+    // Validación para evitar campos vacíos
+    if (typeof nombre !== "string" || nombre.trim() === "") return;
+    if (precio === null || isNaN(precio)) return;
+
     const existe = products.find(
       (product) =>
         product.nombre.toLowerCase() === nombre.toLowerCase() &&
