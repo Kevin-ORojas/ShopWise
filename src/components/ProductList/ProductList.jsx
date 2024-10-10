@@ -1,6 +1,7 @@
 import FactCheckIcon from "@mui/icons-material/FactCheck";
 import ClearIcon from "@mui/icons-material/Clear";
 import EditIcon from "@mui/icons-material/Edit";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 export const ProductList = ({ products, removeProduct }) => {
   return (
@@ -15,7 +16,10 @@ export const ProductList = ({ products, removeProduct }) => {
             className="sm:flex sm:w-full border p-4 flex justify-around items-center bg-gray-100"
             key={id}
           >
-            <h2>{nombre}</h2>
+            <h2>
+              {nombre} <AddCircleOutlineIcon />
+            </h2>
+            <p>cantidad: 4</p>
             <p>${precio}</p>
             <div className="ml-8 gap-4">
               <FactCheckIcon className="blue text-sm" />
