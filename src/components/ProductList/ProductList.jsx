@@ -20,12 +20,12 @@ export const ProductList = ({ products, removeProduct, incrementQuanity }) => {
             <h2>
               {nombre}{" "}
               <AddCircleOutlineIcon
-                className="cursor-pointer"
+                className="cursor-pointer hover:text-red-400 transition-colors duration-600"
                 onClick={() => incrementQuanity(id)}
               />
             </h2>
             <p>cantidad: {cantidad} </p>
-            <p>${(precio * cantidad).toFixed(2)}</p>
+            <p>${precio * cantidad}</p>
             <div className="ml-8 gap-4">
               <FactCheckIcon className="blue text-sm" />
               <ClearIcon
