@@ -59,7 +59,7 @@ export const ProductForm = () => {
           incrementQuanity={incrementQuanity}
         />
         <h2 className="text-2xl font-bold font-roboto text-slate-900 py-4">
-          Total: ${sumPrices().toFixed(1)}
+          Total: ${sumPrices()}
         </h2>
       </div>
     </div>
