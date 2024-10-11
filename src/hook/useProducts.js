@@ -29,7 +29,10 @@ export const useProducts = () => {
   };
 
   const sumPrices = () => {
-    return products.reduce((total, product) => total + product.precio, 0);
+    return products.reduce(
+      (total, product) => total + product.precio * product.cantidad,
+      0
+    );
   };
 
   const removeProduct = (id) => {

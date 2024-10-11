@@ -24,7 +24,7 @@ export const ProductList = ({ products, removeProduct, incrementQuanity }) => {
                 onClick={() => incrementQuanity(id)}
               />
             </h2>
-            <p>{cantidad} :</p>
+            <p>cantidad: {cantidad} </p>
             <p>${(precio * cantidad).toFixed(2)}</p>
             <div className="ml-8 gap-4">
               <FactCheckIcon className="blue text-sm" />

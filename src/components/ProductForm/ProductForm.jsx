@@ -50,6 +50,8 @@ export const ProductForm = () => {
           Agregar Producto
         </button>
       </form>
+
+      {/* aqui estoy renderizando la lista. */}
       <div className="mt-8">
         <ProductList
           products={products}
