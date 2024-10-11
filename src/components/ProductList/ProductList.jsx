@@ -2,13 +2,9 @@ import FactCheckIcon from "@mui/icons-material/FactCheck";
 import ClearIcon from "@mui/icons-material/Clear";
 import EditIcon from "@mui/icons-material/Edit";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-
 import { useProducts } from "../../hook/useProducts";
-import { useCalculateTotal } from "../../hook/useCalculateTotal";
 
-export const ProductList = ({ products, removeProduct }) => {
-  const { total, incrementQuantity } = useCalculateTotal();
-
+export const ProductList = ({ products, removeProduct, incrementQuanity }) => {
   return (
     <div className="font-roboto">
       {products.length === 0 ? (
@@ -16,16 +12,20 @@ export const ProductList = ({ products, removeProduct }) => {
           No hay productos registrados.
         </h2>
       ) : (
-        products.map(({ id, nombre, precio }) => (
+        products.map(({ id, nombre, precio, cantidad }) => (
           <div
             className="sm:flex sm:w-full border p-4 flex justify-around items-center bg-gray-100"
             key={id}
           >
             <h2>
-              {nombre} <AddCircleOutlineIcon className="cursor-pointer" />
+              {nombre}{" "}
+              <AddCircleOutlineIcon
+                className="cursor-pointer"
+                onClick={() => incrementQuanity(id)}
+              />
             </h2>
-            <p>cantidad: </p>
-            <p>${precio}</p>
+            <p>{cantidad} :</p>
+            <p>${(precio * cantidad).toFixed(2)}</p>
             <div className="ml-8 gap-4">
               <FactCheckIcon className="blue text-sm" />
               <ClearIcon

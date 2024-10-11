@@ -5,7 +5,8 @@ import { useProducts } from "../../hook/useProducts";
 export const ProductForm = () => {
   // Aquí es donde se almacenan y gestionan los productos
   const [inputValue, setInputValue] = useState("");
-  const { products, addProduct, sumPrices, removeProduct } = useProducts();
+  const { products, addProduct, sumPrices, removeProduct, incrementQuanity } =
+    useProducts();
   const [precio, setPrecio] = useState(0);
 
   const handleSubmit = (e) => {
@@ -29,6 +30,7 @@ export const ProductForm = () => {
         <input
           className="border p-2 ml-4 rounded-md hover:border-cyan-700 ease-linear transition-colors cursor-pointer"
           onChange={handleInputChange}
+          s
           value={inputValue}
           type="text"
           placeholder="Product Name"
@@ -49,7 +51,11 @@ export const ProductForm = () => {
         </button>
       </form>
       <div className="mt-8">
-        <ProductList products={products} removeProduct={removeProduct} />
+        <ProductList
+          products={products}
+          removeProduct={removeProduct}
+          incrementQuanity={incrementQuanity}
+        />
         <h2 className="text-2xl font-bold font-roboto text-slate-900 py-4">
           Total: ${sumPrices()}
         </h2>
