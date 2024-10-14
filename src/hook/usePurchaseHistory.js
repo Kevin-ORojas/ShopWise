@@ -10,8 +10,10 @@ export const usePurchaseHistory = () => {
     }
   }, []);
 
-  const agregarProducto = (nuevoProducto) => {
-    const nuevoHistorial = [...historiPurchase, nuevoProducto];
+  const agregarProducto = (product) => {
+    const timeHistori = new Date().toLocaleString();
+    const newHistoryItem = { ...product, date: timeHistori }; // Guarda el producto con la fecha
+    const nuevoHistorial = [...historiPurchase, newHistoryItem]; // Cambia nuevoProducto a newHistoryItem
     setHistoriPurchase(nuevoHistorial);
 
     // Guardar el nuevo historial en localStorage

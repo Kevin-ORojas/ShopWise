@@ -66,10 +66,6 @@ export const ProductForm = () => {
           Total: ${sumPrices()}
         </h2>
       </div>
-
-      <div>
-        <h2>Ver tu historial de compras</h2>
-      </div>
     </div>
   );
 };
