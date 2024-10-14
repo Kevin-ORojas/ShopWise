@@ -21,7 +21,7 @@ export const Nav = () => {
           </Link>
           <Link
             className="text-white hover:text-slate-300 transition duration-200"
-            to={"/productos"}
+            to={"/products"}
           >
             Agregar Productos
           </Link>
@@ -33,7 +33,7 @@ export const Nav = () => {
           </Link>
           <Link
             className="text-white hover:text-slate-300 transition duration-200"
-            to={"/historia"}
+            to={"/historial"}
           >
             Historial
           </Link>
