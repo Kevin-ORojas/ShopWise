@@ -2,16 +2,21 @@ import { useState } from "react";
 import { ProductList } from "../ProductList/ProductList";
 import { useProducts } from "../../hook/useProducts";
 
+import { usePurchaseHistory } from "../../hook/usePurchaseHistory";
+
 export const ProductForm = () => {
   // Aquí es donde se almacenan y gestionan los productos
+  const [precio, setPrecio] = useState(0);
   const [inputValue, setInputValue] = useState("");
   const { products, addProduct, sumPrices, removeProduct, incrementQuanity } =
     useProducts();
-  const [precio, setPrecio] = useState(0);
+  const { agregarProducto } = usePurchaseHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const nuevoProducto = { nombre: inputValue, precio }; // Crear un objeto producto
     addProduct(inputValue, precio);
+    agregarProducto(nuevoProducto); // Agrega el producto al historial
     setInputValue("");
     setPrecio(0);
   };
@@ -30,7 +35,6 @@ export const ProductForm = () => {
         <input
           className="border p-2 ml-4 rounded-md hover:border-cyan-700 ease-linear transition-colors cursor-pointer"
           onChange={handleInputChange}
-          s
           value={inputValue}
           type="text"
           placeholder="Product Name"
@@ -61,6 +65,10 @@ export const ProductForm = () => {
         <h2 className="text-2xl font-bold font-roboto text-slate-900 py-4">
           Total: ${sumPrices()}
         </h2>
+      </div>
+
+      <div>
+        <h2>Ver tu historial de compras</h2>
       </div>
     </div>
   );
