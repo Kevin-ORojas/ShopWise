@@ -31,6 +31,7 @@ export const HistoriPurchase = ({ historial }) => {
                   >
                     <p>Producto: {nombre}</p>
                     <p>Precio: ${precio}</p>
+                    <h2>Fecha: {date}</h2>
                   </div>
                 ))
               )}
