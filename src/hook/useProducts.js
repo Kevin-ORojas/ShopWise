@@ -10,6 +10,7 @@ export const useProducts = () => {
 
   const addProduct = (nombre, precio) => {
     if (nombre === "") return;
+    if (precio === "" || precio === 0) return;
 
     const existe = products.find(
       (product) =>
