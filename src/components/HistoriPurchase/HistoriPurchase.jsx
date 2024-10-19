@@ -11,9 +11,8 @@ export const HistoriPurchase = ({ historial }) => {
   return (
     <div className="max-w-full mx-auto mt-8 p-6 rounded-lg shadow-lg">
       <h2
-        className="text-2xl font-bold font-roboto text-slate-900"
+        className="text-2xl font-bold font-roboto text-slate-900 cursor-pointer"
         onClick={toggleVisibility}
-        style={{ cursor: "pointer" }}
       >
         Historial de Compras {isVisible ? "▲" : "▼"}
       </h2>
