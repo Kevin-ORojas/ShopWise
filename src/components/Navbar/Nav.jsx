@@ -25,7 +25,7 @@ export const Nav = () => {
         <div className="md:flex md:justify-end md:items-center w-full px-4 gap-4">
           <div className="md:flex md:justify-start w-full">
             {" "}
-            <img className="w-10" src="/src/assets/market_862819.png" alt="" />
+            <img className="w-10" src="./assets/market_862819.png" alt="" />
           </div>
           <Link
             className="text-white hover:text-slate-300 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 p-2 rounded-sm hover:bg-indigo-500 duration-300"
