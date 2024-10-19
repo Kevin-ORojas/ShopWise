@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import PersonIcon from "@mui/icons-material/Person";
 
 export const Nav = () => {
   const [showNav, setShowNav] = useState(false);
@@ -21,40 +22,34 @@ export const Nav = () => {
           showNav ? "block" : "hidden"
         } transition duration-700 ease-in-out`}
       >
-        <div className="md:flex md:justify-end w-full px-4 gap-4">
+        <div className="md:flex md:justify-end md:items-center w-full px-4 gap-4">
           <div className="md:flex md:justify-start w-full">
             {" "}
-            <p className="text-white">Logo</p>
+            <img className="w-10" src="/src/assets/market_862819.png" alt="" />
           </div>
           <Link
-            className="text-white hover:text-slate-300 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 p-2 rounded-sm hover:bg-indigo-500 duration-300"
+            className="text-white hover:text-slate-300 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 p-2 rounded-sm hover:bg-indigo-500 duration-300"
             to={"/"}
           >
             Home
           </Link>
           <Link
-            className="text-white hover:text-slate-300 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 p-2 rounded-sm hover:bg-indigo-500 duration-300"
+            className="text-white hover:text-slate-300 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 p-2 rounded-sm hover:bg-indigo-500 duration-300"
             to={"/products"}
           >
             Productos
           </Link>
           <Link
-            className="text-white hover:text-slate-300 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 p-2 rounded-sm hover:bg-indigo-500 duration-300"
-            to={"/login"}
-          >
-            Login
-          </Link>
-          <Link
-            className="text-white hover:text-slate-300 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 p-2 rounded-sm hover:bg-indigo-500 duration-300"
+            className="text-white hover:text-slate-300 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 p-2 rounded-sm hover:bg-indigo-500 duration-300"
             to={"/historial"}
           >
             Historial
           </Link>
           <Link
-            className="text-white hover:text-slate-300 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 p-2 rounded-sm hover:bg-indigo-500 duration-300"
-            to={"/register"}
+            className="text-white  hover:text-slate-300 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 p-2 rounded-sm hover:bg-indigo-500 duration-300"
+            to={"/login"}
           >
-            Register
+            <PersonIcon />
           </Link>
         </div>
       </div>
