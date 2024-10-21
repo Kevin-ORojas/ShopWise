@@ -2,11 +2,6 @@ import React, { useState } from "react";
 
 export const useProducts = () => {
   const [products, setProducts] = useState([]);
-  const [cantidad, setCantidad] = useState(1);
-
-  const handleChangeQuantity = () => {
-    setCantidad(cantidad + 1);
-  };
 
   const addProduct = (nombre, precio) => {
     if (nombre === "") return;
