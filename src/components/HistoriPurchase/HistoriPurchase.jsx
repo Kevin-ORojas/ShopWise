@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useProducts } from "../../hook/useProducts";
 
 export const HistoriPurchase = ({ historial }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,7 +22,9 @@ export const HistoriPurchase = ({ historial }) => {
 
   const calculateTotalPrice = (date) => {
     const products = getProductsByDate(date);
-    return products.reduce((total, item) => total + item.precio, 0).toFixed(2);
+    return products
+      .reduce((total, item) => total + Number(item.precio), 0)
+      .toFixed(2);
   };
 
   return (
@@ -68,6 +71,7 @@ export const HistoriPurchase = ({ historial }) => {
                       <h4 className="font-bold">
                         Precio Total: ${calculateTotalPrice(date)}
                       </h4>
+                      <h2>{}</h2>
                     </div>
                   )}
                 </div>

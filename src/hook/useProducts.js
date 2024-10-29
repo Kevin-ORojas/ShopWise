@@ -24,6 +24,19 @@ export const useProducts = () => {
     }
   };
 
+  // sumar elementos si se van agregando
+  const addProductQuantity = (id, quantity) => {
+    const updatedProducts = products.map((product) => {
+      if (product.id === id) {
+        return {
+          ...product,
+          cantidad: product.cantidad + quantity, // aumentamos la cantidad
+        };
+      }
+      return product;
+    });
+    setProducts(updatedProducts);
+  };
   const sumPrices = () => {
     return products.reduce(
       (total, product) => total + product.precio * product.cantidad,
@@ -36,24 +49,12 @@ export const useProducts = () => {
     setProducts(newProducts);
   };
 
-  const incrementQuanity = (id) => {
-    const updatedProducts = products.map((product) => {
-      if (product.id === id) {
-        return {
-          ...product,
-          cantidad: product.cantidad + 1, // aumentamos la cantidad
-        };
-      }
-      return product;
-    });
-    setProducts(updatedProducts);
-  };
-
   return {
     products,
     addProduct,
     sumPrices,
-    incrementQuanity,
+
     removeProduct,
+    addProductQuantity,
   };
 };

@@ -4,7 +4,7 @@ export const usePurchaseHistory = () => {
   const [historiPurchase, setHistoriPurchase] = useState([]);
 
   useEffect(() => {
-    const histori = JSON.parse(localStorage.getItem("historiPurchase") || "[]");
+    const histori = JSON.parse(localStorage.getItem("historiPurchase") || []);
     if (histori) {
       setHistoriPurchase(histori);
     }
@@ -13,6 +13,7 @@ export const usePurchaseHistory = () => {
   const agregarProducto = (product) => {
     const date = new Date().toLocaleDateString(); // Formato de fecha: DD/MM/YYYY
     const newHistoryItem = { ...product, date };
+    newHistoryItem.precio = Number(newHistoryItem.precio);
 
     // Verificar si ya existe una entrada para la fecha actual
     const index = historiPurchase.findIndex((item) => item.date === date);
